@@ -1,0 +1,50 @@
+using System;
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello, World!");
+    }
+}
+
+// 2. Variables and Data Types
+int age = 19;
+double pi = 3.14;
+char grade = 'A';
+bool isStudent = true;
+string name = "Thiru";
+
+// 3. Control Flow
+if (age >= 18) {
+    Console.WriteLine("Adult");
+} else {
+    Console.WriteLine("Minor");
+}
+
+switch (grade) {
+    case 'A': Console.WriteLine("Excellent"); break;
+    case 'B': Console.WriteLine("Good"); break;
+    default: Console.WriteLine("Try again"); break;
+}
+
+for (int i = 0; i < 5; i++) Console.WriteLine(i);
+
+// 4. Functions
+int Add(int a, int b) => a + b;
+Console.WriteLine(Add(3, 4));
+
+// 5. Arrays & Strings
+int[] nums = {1, 2, 3};
+string greeting = $"Hello {name}, welcome!";
+Console.WriteLine(greeting);
+
+// 6. Classes and Objects
+class Student {
+    public string Name;
+    public int Roll;
+    public Student(string name, int roll) {
+        Name = name;
+        Roll = roll;
+    }
+    public void Print() => Console.WriteLine($"{Name} - {Roll}");
+}
+Student s1 = new Student("Thiru", 101);
+s1.Print();
