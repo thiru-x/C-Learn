@@ -1,0 +1,37 @@
+// 11. Async/Await
+using System.Threading.Tasks;
+async Task LoadDataAsync() {
+    await Task.Delay(1000);
+    Console.WriteLine("Data Loaded");
+}
+await LoadDataAsync();
+
+// 12. Lambda Expressions & Func
+Func<int, int, int> multiply = (a, b) => a * b;
+Console.WriteLine(multiply(2, 3));
+
+// 13. Design Patterns
+// Singleton
+class Singleton {
+    private static Singleton instance;
+    private Singleton() {}
+    public static Singleton Instance => instance ??= new Singleton();
+}
+
+// 14. Dependency Injection (basic)
+interface IPrinter {
+    void Print(string msg);
+}
+class ConsolePrinter : IPrinter {
+    public void Print(string msg) => Console.WriteLine(msg);
+}
+class Logger {
+    IPrinter printer;
+    public Logger(IPrinter p) => printer = p;
+    public void Log(string msg) => printer.Print(msg);
+}
+Logger logger = new Logger(new ConsolePrinter());
+logger.Log("DI Example");
+
+// 15. ASP.NET Core Web API (Startup + Controller basics)
+// Skipping actual Web API code here for brevity. Will guide you separately for Web projects.
