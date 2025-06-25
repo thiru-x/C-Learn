@@ -1,0 +1,32 @@
+
+// 7. Inheritance and Polymorphism
+class Animal {
+    public virtual void Speak() => Console.WriteLine("Animal speaks");
+}
+class Dog : Animal {
+    public override void Speak() => Console.WriteLine("Dog barks");
+}
+Animal a = new Dog();
+a.Speak();
+
+// 8. Collections & LINQ
+using System.Collections.Generic;
+using System.Linq;
+List<int> list = new List<int> {1, 2, 3, 4};
+var evens = list.Where(x => x % 2 == 0);
+foreach (var num in evens) Console.WriteLine(num);
+
+// 9. Exception Handling
+try {
+    int x = 10 / 0;
+} catch (DivideByZeroException) {
+    Console.WriteLine("Cannot divide by zero");
+} finally {
+    Console.WriteLine("Done");
+}
+
+// 10. File I/O
+using System.IO;
+File.WriteAllText("sample.txt", "Hello File");
+string content = File.ReadAllText("sample.txt");
+Console.WriteLine(content);
